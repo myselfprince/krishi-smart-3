@@ -1,7 +1,9 @@
 
-const UserProfile = ({params}) => {
+const  UserProfile = async ({params}) => {
+  // The params object contains the dynamic segments of the URL
+  const {id} = await params
   return (
-    <div>Params: {params.id}</div>
+    <div>Params: {id}</div>
   )
 }
 
