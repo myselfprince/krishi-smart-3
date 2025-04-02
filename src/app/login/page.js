@@ -19,29 +19,60 @@ const Login = () => {
   });
 
   // Enable/disable button based on whether fields are filled
+  // useEffect(() => {
+  //   if (user.email.length > 0 && user.password.length > 0) {
+  //     setButtonDisabled(false);
+  //   } else {
+  //     setButtonDisabled(true);
+  //   }
+  // }, [user]);
+
+  // const onLogin = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError(null);
+  //   try {
+  //     const response = await axios.post("/api/users/login", user);
+  //     console.log("Login success:", response.data);
+  //     router.push("/");
+  //   } catch (error) {
+  //     console.error("Login failed:", error.message);
+  //     setError(error.response?.data?.error || "Login failed");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   useEffect(() => {
     if (user.email.length > 0 && user.password.length > 0) {
-      setButtonDisabled(false);
+      setButtonDisabled(false)
     } else {
-      setButtonDisabled(true);
+      setButtonDisabled(true)
     }
-  }, [user]);
+  }, [user])
 
   const onLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
     try {
-      const response = await axios.post("/api/users/login", user);
-      console.log("Login success:", response.data);
-      router.push("/");
+      const response = await axios.post("/api/users/login", user)
+      console.log("Login success:", response.data)
+      
+      // Refresh navbar after successful login
+      if (typeof window.refreshNavbar === 'function') {
+        await window.refreshNavbar()
+      }
+      
+      router.push("/")
     } catch (error) {
-      console.error("Login failed:", error.message);
-      setError(error.response?.data?.error || "Login failed");
+      console.error("Login failed:", error.message)
+      setError(error.response?.data?.error || "Login failed")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">

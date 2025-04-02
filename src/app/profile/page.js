@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import {toast} from 'react-hot-toast'
+import Link from 'next/link'
 
 const Profile = () => {
 
@@ -33,7 +34,7 @@ const Profile = () => {
 
   const getUserDetails = async () => {
     const res = await axios.get('/api/users/me')
-    console.log(res.data);
+    console.log("res data ====",res.data);
     setData(res.data.data._id)
 
   }
@@ -45,7 +46,7 @@ const Profile = () => {
       <button
       onClick={logout}
       className='bg-green-600 cursor-pointer w-[500px] h-[100px]'>Logout</button>
-
+      <h1>{data}</h1>
       <button
       onClick={getUserDetails}
       className='bg-yellow-600 cursor-pointer w-[500px] h-[100px]'>Get User Details</button>
