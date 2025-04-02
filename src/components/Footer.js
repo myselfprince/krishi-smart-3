@@ -28,29 +28,29 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-green-100 mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/" className="text-green-200 hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/services" className="text-green-200 hover:text-white transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/success-stories" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/success-stories" className="text-green-200 hover:text-white transition-colors">
                   Success Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/blog" className="text-green-200 hover:text-white transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/contact" className="text-green-200 hover:text-white transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -63,7 +63,7 @@ const Footer = () => {
             </p>
             <p className="text-green-200 mb-2">Phone: +91 123-456-7890</p>
             <p className="text-green-200">
-              Email: <a href="mailto:support@krishismart.com" className="hover:text-white transition-colors">support@krishismart.com</a>
+              Email: <Link href="mailto:support@krishismart.com" className="hover:text-white transition-colors">support@krishismart.com</Link>
             </p>
           </div>
 
