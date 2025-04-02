@@ -1,245 +1,3 @@
-// 'use client'
-// import React, { useEffect, useState } from 'react'
-// import axios from 'axios'
-// import { useRouter } from 'next/navigation'
-// import Link from 'next/link'
-// import Image from 'next/image'
-
-// const Navbar = () => {
-//   const router = useRouter()
-//   const [user, setUser] = useState(null)
-//   const [error, setError] = useState(null)
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [userName, setUserName] = useState(null);
-
-//   const handleLogout = async () => {
-//     try {
-//       const response = await axios.get('/api/users/logout');
-     
-      
-//       if (response.status === 200) {
-//         toast.success("Logout successful");
-//         console.log("Logout successful");
-//         // localStorage.removeItem('token');
-//         router.push('/login')
-        
-//       } else {
-//         console.error("Logout failed");
-//       }
-//     } catch (error) {
-//       toast.error("Logout failed");
-//       console.error("Error during logout:", error.message);
-//     }
-//   }
-
-
-//   useEffect(() => {
-//     const getUserDetails = async () => {
-//       const res = await axios.get('/api/users/me')
-//       console.log(res.data);
-//       // console.log("username =========",res.data.data.username)
-//       setUserName(res.data.data.username)
-//       setUser(res.data.data._id)
-//       // setUser(res.data.user); // Use res.data.user instead of res.data.data._id
-  
-//     }
-//   getUserDetails();
-//   }, []); 
-
-  
-
-//   return (
-//     <nav className="bg-white shadow-md">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between h-16">
-//           <div className="flex items-center">
-//             <Link href="/" className="flex items-center">
-//               <Image src="/logo.png" alt="KrishiSmart Logo" width={40} height={40} className="mr-2" />
-             
-//               <span className="text-xl font-bold text-green-600">KrishiSmart</span>
-//             </Link>
-//           </div>
-
-//           {/* Mobile menu button */}
-//           <div className="md:hidden flex items-center">
-//             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
-//               {isOpen ? '✕' : '☰'}
-//             </button>
-//           </div>
-        
-//           {/* Desktop menu */}
-//           <div className="hidden md:flex md:space-x-8 md:items-center">
-//             <Link href="/" className="text-gray-700 hover:text-green-600">Home</Link>
-//             <Link href="/seasonal-crop-planner" className="text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
-//             <Link href="/community" className="text-gray-700 hover:text-green-600">Community</Link>
-//           <h1>{userName ? userName : "Guest"}</h1>
-            
-//             {user ? ( 
-//               <button 
-//                 onClick={handleLogout} 
-//                 className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-//               >
-//                 Logout
-//               </button>
-//             ) : (
-//               <Link href="/login" className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Login</Link>
-//             )}
-//           </div>
-//         </div>
-
-//         {/* Mobile menu */}
-//         {isOpen && (
-//           <div className="md:hidden">
-//             <div className="px-2 pt-2 pb-3 space-y-1">
-//               <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600">Home</Link>
-//               <Link href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
-//               <Link href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
-//               {/* {user ?  <button 
-//                   onClick={handleLogout} 
-//                   className="block w-full text-left px-3 py-2 text-red-600 hover:bg-gray-100"
-//                 >
-//                   Logout
-//                 </button>
-//               : (
-//                 <Link href="/login" className="block px-3 py-2 text-green-600 hover:bg-gray-100">Login</Link>
-//               )} */}
-//             </div>
-//           </div>
-//         )}
-       
-//       </div>
-//       {error && <div className="text-red-500 text-center py-2">{error}</div>}
-//     </nav>
-//   )
-// }
-
-// export default Navbar
-// 'use client'
-// import React, { useEffect, useState, useCallback } from 'react'
-// import axios from 'axios'
-// import { useRouter } from 'next/navigation'
-// import Link from 'next/link'
-// import Image from 'next/image'
-// // Note: toast is being used but not imported - you'll need to import it
-// import { toast } from 'react-toastify' // Add this if you're using react-toastify
-
-// const Navbar = () => {
-//   const router = useRouter()
-//   const [user, setUser] = useState(null)
-//   const [error, setError] = useState(null)
-//   const [isOpen, setIsOpen] = useState(false)
-//   const [userName, setUserName] = useState(null)
-  
-//   const getUserDetails = useCallback(async () => {
-//     try {
-//       const res = await axios.get('/api/users/me')
-//       setUserName(res.data.data.username)
-//       setUser(res.data.data._id)
-//       setError(null)
-//     } catch (err) {
-//       console.error("Error fetching user details:", err)
-//       setError("Failed to load user details")
-//     }
-//   }, [])
-
-//   useEffect(() => {
-//     getUserDetails()
-//   }, [getUserDetails])
-
-//   const handleLogout = async () => {
-//     try {
-//       const response = await axios.get('/api/users/logout')
-//       if (response.status === 200) {
-//         toast.success("Logout successful")
-//         setUser(null)
-//         setUserName(null)
-//         router.push('/login')
-//       }
-//     } catch (error) {
-//       toast.error("Logout failed")
-//       setError("Failed to logout")
-//     }
-//   }
-
-//   // Expose refresh function to window for login page to call
-//   useEffect(() => {
-//     window.refreshNavbar = getUserDetails
-//     return () => {
-//       delete window.refreshNavbar
-//     }
-//   }, [getUserDetails])
-
-//   return (
-//     <nav className="bg-white shadow-md">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between h-16">
-//           <div className="flex items-center">
-//             <Link href="/" className="flex items-center">
-//               <Image src="/logo.png" alt="KrishiSmart Logo" width={40} height={40} className="mr-2" />
-//               <span className="text-xl font-bold text-green-600">KrishiSmart</span>
-//             </Link>
-//           </div>
-
-//           {/* Mobile menu button */}
-//           <div className="md:hidden flex items-center">
-//             <button 
-//               onClick={() => setIsOpen(!isOpen)} 
-//               className="text-gray-700 focus:outline-none"
-//               aria-label="Toggle menu"
-//             >
-//               {isOpen ? '✕' : '☰'}
-//             </button>
-//           </div>
-        
-//           {/* Desktop menu */}
-//           <div className="hidden md:flex md:space-x-8 md:items-center">
-//             <Link href="/" className="text-gray-700 hover:text-green-600">Home</Link>
-//             <Link href="/seasonal-crop-planner" className="text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
-//             <Link href="/community" className="text-gray-700 hover:text-green-600">Community</Link>
-//             <span className="text-gray-700">{userName || "Guest"}</span>
-            
-//             {user ? (
-//               <button 
-//                 onClick={handleLogout} 
-//                 className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 cursor-pointer"
-//               >
-//                 Logout
-//               </button>
-//             ) : (
-//               <Link href="/login" className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Login</Link>
-//             )}
-//           </div>
-//         </div>
-
-//         {/* Mobile menu */}
-//         {isOpen && (
-//           <div className="md:hidden">
-//             <div className="px-2 pt-2 pb-3 space-y-1">
-//               <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600">Home</Link>
-//               <Link href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
-//               <Link href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
-//               <span className="block px-3 py-2 text-gray-700">{userName || "Guest"}</span>
-//               {user ? (
-//                 <button 
-//                   onClick={handleLogout} 
-//                   className="block w-full text-left px-3 py-2 text-red-600 hover:bg-gray-100 cursor-pointer"
-//                 >
-//                   Logout
-//                 </button>
-//               ) : (
-//                 <Link href="/login" className="block px-3 py-2 text-green-600 hover:bg-gray-100">Login</Link>
-//               )}
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//       {error && <div className="text-red-500 text-center py-2">{error}</div>}
-//     </nav>
-//   )
-// }
-
-// export default Navbar // Add export statement
-// src/components/Navbar.js
 'use client'
 import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
@@ -252,9 +10,10 @@ const Navbar = () => {
   const router = useRouter()
   const [user, setUser] = useState(null)
   const [error, setError] = useState(null)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false) // For mobile menu
   const [userName, setUserName] = useState(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false) // For profile dropdown
 
   const checkAuthStatus = useCallback(async () => {
     try {
@@ -291,6 +50,7 @@ const Navbar = () => {
         setUser(null)
         setUserName(null)
         setIsAuthenticated(false)
+        setIsDropdownOpen(false) // Close dropdown on logout
         router.push('/login')
       }
     } catch (error) {
@@ -306,6 +66,29 @@ const Navbar = () => {
     }
   }, [checkAuthStatus])
 
+  // Function to get the first letter of the username
+  const getFirstLetter = (name) => {
+    return name ? name.charAt(0).toUpperCase() : ''
+  }
+
+  // Toggle dropdown visibility
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+    
+  }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.profile-dropdown')) {
+        setIsDropdownOpen(false)
+      }
+    }
+    if (isDropdownOpen) {
+      document.addEventListener('click', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isDropdownOpen])
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -331,15 +114,35 @@ const Navbar = () => {
             <Link href="/" className="text-gray-700 hover:text-green-600">Home</Link>
             <Link href="/seasonal-crop-planner" className="text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
             <Link href="/community" className="text-gray-700 hover:text-green-600">Community</Link>
-            <span className="text-gray-700">{userName || ""}</span>
             
-            {user ? (
-              <button 
-                onClick={handleLogout} 
-                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 cursor-pointer"
-              >
-                Logout
-              </button>
+            {/* Profile Icon or Guest */}
+            {userName ? (
+              <div className="relative">
+                <div
+                  onClick={toggleDropdown}
+                  className="w-10 h-10 text-xl bg-green-300 rounded-full flex items-center justify-center text-green-800 font-semibold cursor-pointer"
+                >
+                  {getFirstLetter(userName)}
+                </div>
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-500 rounded-lg shadow-md z-10 ">
+                    <Link
+                      href="/profile"
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg border-b border-gray-500"
+                      onClick={() => setIsDropdownOpen(false)} // Close dropdown on click
+                    >
+                      Visit Profile
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100 cursor-pointer rounded-lg border-gray-500"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
               <Link href="/login" className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Login</Link>
             )}
@@ -352,14 +155,38 @@ const Navbar = () => {
               <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600">Home</Link>
               <Link href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
               <Link href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
-              <span className={`${userName?"block":"hidden"} px-3 py-2 text-gray-700`}>{userName || ""}</span>
-              {user ? (
-                <button 
-                  onClick={handleLogout} 
-                  className="block w-full text-left px-3 py-2 text-red-600 hover:bg-gray-100 cursor-pointer"
-                >
-                  Logout
-                </button>
+              
+              {/* Profile Icon or Guest in Mobile Menu */}
+              {userName ? (
+                <div className="relative">
+                  <div
+                    onClick={toggleDropdown}
+                    className="flex items-center px-3 py-2 cursor-pointer"
+                  >
+                    <div className="w-10 h-10 bg-green-300 rounded-full flex items-center justify-center text-green-800 font-semibold mr-2">
+                      {getFirstLetter(userName)}
+                    </div>
+                    <span className="text-gray-700">{userName}</span>
+                  </div>
+                  {/* Dropdown Menu in Mobile */}
+                  {isDropdownOpen && (
+                    <div className="pl-4 mt-1 w-full bg-white rounded-lg shadow-md ">
+                      <Link
+                        href="/profile"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        onClick={() => setIsDropdownOpen(false)} // Close dropdown on click
+                      >
+                        Visit Profile
+                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link href="/login" className="block px-3 py-2 text-green-600 hover:bg-gray-100">Login</Link>
               )}

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import {toast} from 'react-hot-toast'
 import Link from 'next/link'
+import ProfilePage from '@/components/ProfilePage'
 
 const Profile = () => {
 
@@ -41,7 +42,7 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>Profile</h1>
+      {/* <h1>Profile</h1>
       <h2>{data==='nothing'?"data not present":<Link href={`/profile/${data}`}></Link>}</h2>
       <button
       onClick={logout}
@@ -49,7 +50,8 @@ const Profile = () => {
       <h1>{data}</h1>
       <button
       onClick={getUserDetails}
-      className='bg-yellow-600 cursor-pointer w-[500px] h-[100px]'>Get User Details</button>
+      className='bg-yellow-600 cursor-pointer w-[500px] h-[100px]'>Get User Details</button> */}
+      <ProfilePage />
     </div>
 
   
