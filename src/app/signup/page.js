@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
@@ -61,7 +62,7 @@ const Signup = () => {
         <div className="flex h-screen items-center justify-center bg-gray-100">
             <div className="flex w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="w-1/2 bg-amber-50 flex flex-col items-center justify-center p-8">
-                    <img src="/login.png" alt="KrishiMART Logo" className="mb-4" />
+                    <Image src="/login.png" alt="KrishiMART Logo" className="mb-4" height={500} width={500}/>
                     <h2 className="text-xl font-semibold text-green-800">
                         Simplifying Agriculture for Every Kisan
                     </h2>

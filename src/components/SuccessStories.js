@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const SuccessStories = () => {
     const stories = [
       {
@@ -34,16 +36,17 @@ const SuccessStories = () => {
               >
                 {/* Image */}
                 <div className="w-32 h-32 mb-4 md:w-[400px] md:mb-0 md:mr-6">
-                  <img
+                  <Image
                     src={story.image}
                     alt={story.name}
                     className="w-full h-full object-cover rounded-full md:rounded-none"
+                    height={500} width={500}
                   />
                 </div>
                 {/* Quote and Name */}
                 <div className="text-center md:text-left">
                   <p className="text-green-100 italic mb-4">{story.quote}</p>
-                  <h3 className="text-lg font-semibold text-white">{story.name}</h3>
+                  <h3 className="text-lg font-semibold text-white">&quot;{story.name}&quot;</h3>
                 </div>
               </div>
             ))}

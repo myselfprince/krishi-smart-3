@@ -1,6 +1,7 @@
 'use client';
 
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
 
@@ -90,18 +91,18 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-6 mt-8">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
+          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
             <FaFacebook size={24} />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
+          </Link>
+          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
             <FaTwitter size={24} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
+          </Link>
+          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
             <FaInstagram size={24} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
+          </Link>
+          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-green-200 hover:text-white transition-colors">
             <FaLinkedin size={24} />
-          </a>
+          </Link>
         </div>
 
         {/* Copyright Notice */}
