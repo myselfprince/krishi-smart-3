@@ -115,7 +115,7 @@ export default function Home() {
               {service.title}
             </h2>
             <p className="text-gray-600 mb-4">{service.description}</p>
-            <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition-colors">
+            <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition-colors cursor-pointer">
               {service.buttonText}
             </button>
           </div>

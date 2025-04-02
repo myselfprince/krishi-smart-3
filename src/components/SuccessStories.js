@@ -1,13 +1,13 @@
 const SuccessStories = () => {
     const stories = [
       {
-        image: "https://via.placeholder.com/150", // Placeholder image; replace with actual image URL
+        image: "/ss/2.png", // Placeholder image; replace with actual image URL
         quote:
           "With KrishiSmart’s AI Crop Planner, I optimized my crop cycles and increased my yield by 40%. Now, I sell my produce at the best market prices!",
         name: "Ramesh Kumar",
       },
       {
-        image: "https://via.placeholder.com/150", // Placeholder image; replace with actual image URL
+        image: "/ss/1.png", // Placeholder image; replace with actual image URL
         quote:
           "I learned modern organic farming techniques through FarmerTube. Now, I use eco-friendly practices, improving my farm’s sustainability!",
         name: "Anjali Verma",
@@ -33,11 +33,11 @@ const SuccessStories = () => {
                 className="flex flex-col md:flex-row items-center bg-green-600 rounded-lg p-6 shadow-md"
               >
                 {/* Image */}
-                <div className="w-32 h-32 mb-4 md:mb-0 md:mr-6">
+                <div className="w-32 h-32 mb-4 md:w-[400px] md:mb-0 md:mr-6">
                   <img
                     src={story.image}
                     alt={story.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover rounded-full md:rounded-none"
                   />
                 </div>
                 {/* Quote and Name */}
