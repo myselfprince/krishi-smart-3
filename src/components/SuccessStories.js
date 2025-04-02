@@ -42,7 +42,7 @@ const SuccessStories = () => {
                 </div>
                 {/* Quote and Name */}
                 <div className="text-center md:text-left">
-                  <p className="text-green-100 italic mb-4">"{story.quote}"</p>
+                  <p className="text-green-100 italic mb-4">{story.quote}</p>
                   <h3 className="text-lg font-semibold text-white">{story.name}</h3>
                 </div>
               </div>
