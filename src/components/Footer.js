@@ -57,14 +57,22 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h4 className="text-lg font-semibold text-green-100 mb-4">Contact Us</h4>
+            {/* <h4 className="text-lg font-semibold text-green-100 mb-4">Contact Us</h4>
             <p className="text-green-200 mb-2">
               123 Agri Lane, Green Valley, India
             </p>
             <p className="text-green-200 mb-2">Phone: +91 123-456-7890</p>
             <p className="text-green-200">
               Email: <Link href="mailto:support@krishismart.com" className="hover:text-white transition-colors">support@krishismart.com</Link>
-            </p>
+            </p> */}
+            <ul>
+            <h4 className="text-lg font-semibold text-green-100 mb-4">Privacy and Terms</h4>
+              <Link href="/privacy-policy"><li className="text-green-200 mb-2">Privacy Policy</li></Link>
+              <Link href="/terms-and-conditions"><li className="text-green-200 mb-2">Terms and Conditions</li></Link>
+              <Link href="/cancellation-and-refund"><li className="text-green-200 mb-2">Cancellation and Refund</li></Link>
+              <Link href="/shipping-and-delivery"><li className="text-green-200 mb-2">Shipping and Delivery</li></Link>
+              <Link href="/contact"><li className="text-green-200 mb-2">Contact Us</li></Link>
+            </ul>
           </div>
 
           {/* Newsletter Subscription */}
