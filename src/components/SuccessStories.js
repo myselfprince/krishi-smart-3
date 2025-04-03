@@ -17,7 +17,7 @@ const SuccessStories = () => {
     ];
   
     return (
-      <div className="bg-green-700 py-10">
+      <div id="success-stories" className="bg-green-700 py-10">
         <div className="max-w-5xl mx-auto px-4">
           {/* Heading and Subheading */}
           <div className="text-center mb-10">

@@ -49,7 +49,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+    <div id="services" className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
 
       {/* Heading and Subheading */}
       <div className="text-center mb-10">

@@ -19,31 +19,9 @@ const Login = () => {
     password: ""
   });
 
-  // Enable/disable button based on whether fields are filled
-  // useEffect(() => {
-  //   if (user.email.length > 0 && user.password.length > 0) {
-  //     setButtonDisabled(false);
-  //   } else {
-  //     setButtonDisabled(true);
-  //   }
-  // }, [user]);
-
-  // const onLogin = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setError(null);
-  //   try {
-  //     const response = await axios.post("/api/users/login", user);
-  //     console.log("Login success:", response.data);
-  //     router.push("/");
-  //   } catch (error) {
-  //     console.error("Login failed:", error.message);
-  //     setError(error.response?.data?.error || "Login failed");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
+  function closeMenu(){
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     if (user.email.length > 0 && user.password.length > 0) {
@@ -132,9 +110,12 @@ const Login = () => {
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>
-          <Link href="/signup" className="block mt-4 text-green-600 hover:underline">
+          <Link onClick={closeMenu} href="/signup" className="block mt-4 text-green-600 hover:underline">
             New User? Signup
           </Link>
+          {/* <Link href="/signup" className="block mt-4 text-green-600 hover:underline">
+            New User? Signup
+          </Link> */}
         </div>
       </div>
     </div>

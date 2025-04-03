@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { useCart } from './CartContext'; // Adjust the path if needed
 
 const Navbar = () => {
-  const { cart } = useCart(); // Access cart from context
+  const { cart } = useCart(); 
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
@@ -46,6 +46,8 @@ const Navbar = () => {
     checkAuthStatus();
   }, [checkAuthStatus]);
 
+  
+
   const handleLogout = async () => {
     try {
       const response = await axios.get('/api/users/logout');
@@ -55,6 +57,7 @@ const Navbar = () => {
         setUserName(null);
         setIsAuthenticated(false);
         setIsDropdownOpen(false);
+        setIsOpen(false);
         router.push('/login');
       }
     } catch (error) {
@@ -119,14 +122,14 @@ const Navbar = () => {
             <Link href="/community" className="text-gray-700 hover:text-green-600">Community</Link>
 
             {/* Cart Icon */}
-            <Link href="/cart" className="relative text-gray-700 hover:text-green-600">
+           {user && <Link href="/cart" className="relative text-gray-700 hover:text-green-600">
               <span className="text-2xl">🛒</span>
               {cartItemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {cartItemCount}
                 </span>
               )}
-            </Link>
+            </Link>}
 
             {/* Profile Icon or Guest */}
             {userName ? (
@@ -165,14 +168,14 @@ const Navbar = () => {
               <Link href="/marketplace" className="block px-3 py-2 text-gray-700 hover:text-green-600">Marketplace</Link>
               <Link href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
               <Link href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
-              <Link href="/cart" className="block px-3 py-2 text-gray-700 hover:text-green-600 relative">
+             {user && <Link href="/cart" className="block px-3 py-2 text-gray-700 hover:text-green-600 relative">
                 Cart
                 {cartItemCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {cartItemCount}
                   </span>
                 )}
-              </Link>
+              </Link>}
               {userName ? (
                 <div className="relative">
                   <div onClick={toggleDropdown} className="flex items-center px-3 py-2 cursor-pointer">

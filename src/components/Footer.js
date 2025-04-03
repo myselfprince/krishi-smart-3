@@ -33,17 +33,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-green-200 hover:text-white transition-colors">
+                <Link href="#services" className="text-green-200 hover:text-white transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/success-stories" className="text-green-200 hover:text-white transition-colors">
+                <Link href="#success-stories" className="text-green-200 hover:text-white transition-colors">
                   Success Stories
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-green-200 hover:text-white transition-colors">
+                <Link href="/blogs" className="text-green-200 hover:text-white transition-colors">
                   Blog
                 </Link>
               </li>
@@ -73,7 +73,7 @@ const Footer = () => {
             <p className="text-green-200 mb-4">
               Stay updated with the latest farming tips and innovations.
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -82,8 +82,7 @@ const Footer = () => {
               <button
                 type="submit"
                 className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors cursor-pointer"
-              >
-                Subscribe
+              >    Subscribe
               </button>
             </form>
           </div>

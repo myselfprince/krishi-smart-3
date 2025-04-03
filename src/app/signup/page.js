@@ -47,6 +47,10 @@ const Signup = () => {
         }
     };
 
+    function closeMenu(){
+        setIsOpen(false);
+      }
+
     useEffect(() => {
         if (user.email.length > 0 && 
             user.password.length > 0 && 
@@ -141,9 +145,12 @@ const Signup = () => {
                             {loading ? "Signing up..." : buttonDisabled ? "Fill all fields" : "Signup"}
                         </button>
                     </form>
-                    <Link href="/login" className="block mt-4 text-green-600 hover:underline">
+                    <Link onClick={closeMenu} href="/login" className="block mt-4 text-green-600 hover:underline">
                         Already have an Account? Login
                     </Link>
+                    {/* <Link href="/login" className="block mt-4 text-green-600 hover:underline">
+                        Already have an Account? Login
+                    </Link> */}
                 </div>
             </div>
         </div>

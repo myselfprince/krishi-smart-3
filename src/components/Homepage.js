@@ -23,7 +23,7 @@ export default function Homepage() {
            <Link href="/marketplace" >  <button className="cursor-pointer px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors duration-200">
                 Marketplace
               </button></Link> 
-              <Link href="/farmertube">    <button className="cursor-pointer px-6 py-3 bg-yellow-500 text-white font-semibold rounded-full hover:bg-yellow-600 transition-colors duration-200">
+              <Link href="/farmer-tube">    <button className="cursor-pointer px-6 py-3 bg-yellow-500 text-white font-semibold rounded-full hover:bg-yellow-600 transition-colors duration-200">
                 FarmerTube
               </button></Link>
             </div>
