@@ -15,9 +15,10 @@ export default function Marketplace() {
 
   // Sample product data (replace with dynamic data from MongoDB)
   const products = [
-    { id: 1, name: 'Organic Seeds Pack', category: 'seeds', price: 50, image: '/placeholder-seeds.jpg', rating: 4.5 },
-    { id: 2, name: 'Nitrogen Fertilizer', category: 'fertilizers', price: 120, image: '/placeholder-fertilizer.jpg', rating: 4.0 },
-    { id: 3, name: 'Tractor Attachment', category: 'equipment', price: 500, image: '/placeholder-equipment.jpg', rating: 4.7 },
+    { id: 1, name: 'Organic Seeds Pack', category: 'seeds', price: 50, image: '/marketplace/organic-seed.jpg', rating: 4.5 },
+    { id: 2, name: 'Nitrogen Fertilizer', category: 'fertilizers', price: 120, image: '/marketplace/nitrogen-fertilizer.jpg', rating: 4.0 },
+    { id: 3, name: 'Tractor Attachment', category: 'equipment', price: 500, image: '/marketplace/tractor-attachments.jpg', rating: 4.7 },
+    { id: 4, name: 'Urea', category: 'equipment', price: 500, image: '/marketplace/urea.jpg', rating: 4.7 },
   ];
 
   // Filter products based on category and price range
