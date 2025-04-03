@@ -68,10 +68,12 @@ const Footer = () => {
             <ul>
             <h4 className="text-lg font-semibold text-green-100 mb-4">Privacy and Terms</h4>
               <Link href="/privacy-policy"><li className="text-green-200 mb-2">Privacy Policy</li></Link>
+              <Link href="/pricing"><li className="text-green-200 mb-2">Pricing</li></Link>
               <Link href="/terms-and-conditions"><li className="text-green-200 mb-2">Terms and Conditions</li></Link>
               <Link href="/cancellation-and-refund"><li className="text-green-200 mb-2">Cancellation and Refund</li></Link>
               <Link href="/shipping-and-delivery"><li className="text-green-200 mb-2">Shipping and Delivery</li></Link>
               <Link href="/contact"><li className="text-green-200 mb-2">Contact Us</li></Link>
+              <Link href="/about"><li className="text-green-200 mb-2">About Us</li></Link>
             </ul>
           </div>
 
