@@ -19,10 +19,10 @@ export default function CancellationAndRefund() {
             - You can cancel an order within 24 hours of placing it, provided the
             seller has not yet shipped the product.
             <br />
-            - To cancel, go to your order history and select "Cancel Order." You
+            - To cancel, go to your order history and select &quot;Cancel Order.&quot; You
             will receive a confirmation email.
             <br />- Once the order is shipped, cancellation is subject to the
-            seller’s approval.
+            seller&quot;s approval.
           </p>
   
           <h2 className="text-xl font-semibold text-gray-800 mt-4 mb-2">
