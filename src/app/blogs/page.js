@@ -1,7 +1,8 @@
 'use client'
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Blogs() {
   const blogData = [
@@ -15,6 +16,7 @@ export default function Blogs() {
       thumbnail: "/sample/1.jpg",
       language: "English",
       date: "2025-03-15",
+      link:"/blogs/1",
     },
     {
       id: 2,
@@ -26,6 +28,7 @@ export default function Blogs() {
       thumbnail: "/sample/2.jpg",
       language: "Hindi",
       date: "2025-03-10",
+      link:"/blogs/2",
     },
     {
       id: 3,
@@ -37,6 +40,7 @@ export default function Blogs() {
       thumbnail: "/sample/3.jpg",
       language: "English",
       date: "2025-03-05",
+      link:"/blogs/3",
     },
     {
       id: 4,
@@ -48,6 +52,7 @@ export default function Blogs() {
       thumbnail: "/sample/4.jpg",
       language: "Hindi",
       date: "2025-02-28",
+      link:"/blogs/1",
     },
     {
       id: 5,
@@ -59,6 +64,7 @@ export default function Blogs() {
       thumbnail: "/sample/5.jpg",
       language: "English",
       date: "2025-02-20",
+      link:"/blogs/2",
     },
     {
       id: 6,
@@ -70,6 +76,7 @@ export default function Blogs() {
       thumbnail: "/sample/6.jpg",
       language: "Hindi",
       date: "2025-02-15",
+      link:"/blogs/3",
     },
   ];
 
@@ -218,7 +225,7 @@ export default function Blogs() {
                 width={300}
                 height={200}
                 className="w-full h-40 object-cover"
-              />
+              />    
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {blog.title}
@@ -227,9 +234,9 @@ export default function Blogs() {
                 <p className="text-sm text-gray-500">
                   By {blog.author} | {blog.date}
                 </p>
-                <button className="mt-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
+          <Link href={`${blog.link}`}>   <button className="mt-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 cursor-pointer">
                   Read More
-                </button>
+                </button></Link>   
               </div>
             </div>
           ))}
@@ -264,9 +271,9 @@ export default function Blogs() {
                     <p className="text-sm text-gray-500">
                       By {blog.author} | {blog.date}
                     </p>
-                    <button className="mt-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
+                    <Link href={`${blog.link}`}>       <button className="mt-2 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 cursor-pointer">
                       Read More
-                    </button>
+                    </button> </Link>
                   </div>
                 </div>
               ))}
