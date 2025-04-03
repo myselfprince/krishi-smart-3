@@ -1,11 +1,11 @@
 // app/cart/page.js (or pages/cart.js)
 'use client';
 
-import Head from 'next/head';
 import { useCart } from '@/components/CartContext';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation'; // Import useRouter for redirection
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 export default function Cart() {
   const { cart, setCart } = useCart();
@@ -113,10 +113,7 @@ export default function Cart() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Head>
-        <title>KrishiSmart - Your Cart</title>
-        <meta name="description" content="View your shopping cart" />
-      </Head>
+   
 
       <section className="bg-green-600 text-white py-16 text-center">
         <h2 className="text-4xl font-bold mb-4">Your Cart</h2>
@@ -124,7 +121,14 @@ export default function Cart() {
 
       <div className="container mx-auto p-6">
         {cart.length === 0 ? (
+          <div className='flex flex-col items-center justify-center h-full'>
           <p className="text-center text-gray-500">Your cart is empty.</p>
+         <Link href="/marketplace"> <button
+                className="mt-4 bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 cursor-pointer"
+              >
+                Visit Marketplace to shop now!
+              </button></Link>
+          </div>
         ) : (
           <div>
             {cart.map((item) => (
@@ -143,14 +147,14 @@ export default function Cart() {
                   <div className="flex items-center mt-2">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-l-md hover:bg-gray-300"
+                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-l-md hover:bg-gray-300 cursor-pointer"
                     >
                       -
                     </button>
                     <span className="px-4">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-r-md hover:bg-gray-300"
+                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-r-md hover:bg-gray-300 cursor-pointer"
                     >
                       +
                     </button>
@@ -159,7 +163,7 @@ export default function Cart() {
                 </div>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="ml-4 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
+                  className="ml-4 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 cursor-pointer"
                 >
                   Remove
                 </button>
@@ -169,7 +173,7 @@ export default function Cart() {
               <p className="text-xl font-bold">Total: ₹{calculateTotal()}</p>
               <button
                 onClick={handleCheckout}
-                className="mt-4 bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600"
+                className="mt-4 bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 cursor-pointer"
               >
                 Checkout
               </button>
