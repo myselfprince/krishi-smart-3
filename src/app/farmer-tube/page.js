@@ -142,114 +142,114 @@ export default function FarmerTube() {
       language: "English",
       link: "https://utkarshindia.in/blog/how-to-start-a-farm-in-india"
     },
-    {
-      id: 16,
-      title: "Maximizing Profits with Minimal Resources in Small Farms",
-      category: "Sustainable Farming",
-      type: "Video",
-      thumbnail: "/farmer-tube/Transforming Small Farms into Profit Machines.jpg",
-      language: "Hindi",
-      link: "https://www.youtube.com/watch?v=NbavN0ZnQmo"
-    },
-    {
-      id: 17,
-      title: "Building a Greenhouse for Year-Round Crop Production",
-      category: "Crop Care",
-      type: "Video",
-      thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
-    },
-    {
-      id: 18,
-      title: "How to Build a Raised Bed Garden for Small Farms",
-      category: "Crop Care",
-      type: "Video",
-      thumbnail: "/farmer-tube/How to Start a Small Farm.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
-    },
-    {
-      id: 19,
-      title: "Natural Pest Control Methods for Organic Farming",
-      category: "Pest Management",
-      type: "Video",
-      thumbnail: "/farmer-tube/aaise-kare-farming-shuru.jpg",
-      language: "Hindi",
-      link: "https://www.youtube.com/watch?v=2qiNKen-rm0"
-    },
-    {
-      id: 20,
-      title: "How to Use Mulching to Improve Soil Health in Organic Farms",
-      category: "Sustainable Farming",
-      type: "Article",
-      thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=lMkPcx6ijbg"
-    },
-    {
-      id: 21,
-      title: "Top 5 Organic Fertilizers for High-Yield Farming",
-      category: "Sustainable Farming",
-      type: "Video",
-      thumbnail: "/farmer-tube/Organic farming secrets.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=HgPt61uRs20"
-    },
-    {
-      id: 22,
-      title: "What You Need to Know About Crop Rotation in Organic Farming",
-      category: "Crop Care",
-      type: "Article",
-      thumbnail: "/farmer-tube/How to Start a Small Farm.jpg",
-      language: "Hindi",
-      link: "https://utkarshindia.in/blog/how-to-start-a-farm-in-india"
-    },
-    {
-      id: 23,
-      title: "Understanding Permaculture for Sustainable Farming",
-      category: "Sustainable Farming",
-      type: "Video",
-      thumbnail: "/farmer-tube/aaise-kare-farming-shuru.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
-    },
-    {
-      id: 24,
-      title: "How to Start Hydroponic Farming at Home",
-      category: "Sustainable Farming",
-      type: "Video",
-      thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
-      language: "English",
-      link: "https://www.youtube.com/watch?v=lMkPcx6ijbg"
-    },
-    {
-      id: 25,
-      title: "The Secrets to Growing Organic Tomatoes Successfully",
-      category: "Crop Care",
-      type: "Video",
-      thumbnail: "/farmer-tube/Organic farming secrets.jpg",
-      language: "Hindi",
-      link: "https://www.youtube.com/watch?v=HgPt61uRs20"
-    },
-    {
-      id: 26,
-      title: "How to Use Composting to Improve Your Farm’s Soil",
-      category: "Sustainable Farming",
-      type: "Article",
-      thumbnail: "/farmer-tube/start-farming-business-in-india.jfif",
-      language: "English",
-      link: "https://utkarshindia.in/blog/how-to-start-a-farm-in-india"
-    },
-    {
-      id: 27,
-      title: "Transforming Small Farms into Profitable Ventures",
-      category: "Sustainable Farming",
-      type: "Video",
-      thumbnail: "/farmer-tube/Transforming Small Farms into Profit Machines.jpg",
-      language: "Hindi",
-      link: "https://www.youtube.com/watch?v=NbavN0ZnQmo"
-    }
+    // {
+    //   id: 16,
+    //   title: "Maximizing Profits with Minimal Resources in Small Farms",
+    //   category: "Sustainable Farming",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Transforming Small Farms into Profit Machines.jpg",
+    //   language: "Hindi",
+    //   link: "https://www.youtube.com/watch?v=NbavN0ZnQmo"
+    // },
+    // {
+    //   id: 17,
+    //   title: "Building a Greenhouse for Year-Round Crop Production",
+    //   category: "Crop Care",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
+    // },
+    // {
+    //   id: 18,
+    //   title: "How to Build a Raised Bed Garden for Small Farms",
+    //   category: "Crop Care",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/How to Start a Small Farm.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
+    // },
+    // {
+    //   id: 19,
+    //   title: "Natural Pest Control Methods for Organic Farming",
+    //   category: "Pest Management",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/aaise-kare-farming-shuru.jpg",
+    //   language: "Hindi",
+    //   link: "https://www.youtube.com/watch?v=2qiNKen-rm0"
+    // },
+    // {
+    //   id: 20,
+    //   title: "How to Use Mulching to Improve Soil Health in Organic Farms",
+    //   category: "Sustainable Farming",
+    //   type: "Article",
+    //   thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=lMkPcx6ijbg"
+    // },
+    // {
+    //   id: 21,
+    //   title: "Top 5 Organic Fertilizers for High-Yield Farming",
+    //   category: "Sustainable Farming",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Organic farming secrets.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=HgPt61uRs20"
+    // },
+    // {
+    //   id: 22,
+    //   title: "What You Need to Know About Crop Rotation in Organic Farming",
+    //   category: "Crop Care",
+    //   type: "Article",
+    //   thumbnail: "/farmer-tube/How to Start a Small Farm.jpg",
+    //   language: "Hindi",
+    //   link: "https://utkarshindia.in/blog/how-to-start-a-farm-in-india"
+    // },
+    // {
+    //   id: 23,
+    //   title: "Understanding Permaculture for Sustainable Farming",
+    //   category: "Sustainable Farming",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/aaise-kare-farming-shuru.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=heTxEsrPVdQ"
+    // },
+    // {
+    //   id: 24,
+    //   title: "How to Start Hydroponic Farming at Home",
+    //   category: "Sustainable Farming",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Organic farming VS natural farming.jpg",
+    //   language: "English",
+    //   link: "https://www.youtube.com/watch?v=lMkPcx6ijbg"
+    // },
+    // {
+    //   id: 25,
+    //   title: "The Secrets to Growing Organic Tomatoes Successfully",
+    //   category: "Crop Care",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Organic farming secrets.jpg",
+    //   language: "Hindi",
+    //   link: "https://www.youtube.com/watch?v=HgPt61uRs20"
+    // },
+    // {
+    //   id: 26,
+    //   title: "How to Use Composting to Improve Your Farm’s Soil",
+    //   category: "Sustainable Farming",
+    //   type: "Article",
+    //   thumbnail: "/farmer-tube/start-farming-business-in-india.jfif",
+    //   language: "English",
+    //   link: "https://utkarshindia.in/blog/how-to-start-a-farm-in-india"
+    // },
+    // {
+    //   id: 27,
+    //   title: "Transforming Small Farms into Profitable Ventures",
+    //   category: "Sustainable Farming",
+    //   type: "Video",
+    //   thumbnail: "/farmer-tube/Transforming Small Farms into Profit Machines.jpg",
+    //   language: "Hindi",
+    //   link: "https://www.youtube.com/watch?v=NbavN0ZnQmo"
+    // }
     
 
   ];

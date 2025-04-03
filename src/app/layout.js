@@ -20,9 +20,11 @@ export const metadata = {
   description: "An App for Farmers and Agriculture",
 };
 
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    
+    <html lang="en">   
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ClientLayout>
           <Navbar />
