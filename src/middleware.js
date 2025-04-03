@@ -26,5 +26,12 @@ export const config = {
     '/login',
     '/signup',
     '/profile',
+    // '/marketplace',
+    // '/seasonal-crop-planner',
+    // '/community',
+    // '/farmer-tube',
+    // '/disease-detection',
+    // '/market-price-predictor',
+    // '/blogs',
   ],
 }

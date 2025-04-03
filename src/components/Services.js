@@ -1,99 +1,55 @@
-import Head from "next/head";
 import { FaShoppingCart, FaCalendarAlt, FaBug, FaChartLine, FaPlayCircle, FaBook } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
-//     const services = [
-//   { icon: <FaShoppingCart />, title: "Online Marketplace", ... },
-//   { icon: <FaCalendarAlt />, title: "AI Crop Planner", ... },
-//   { icon: <FaBug />, title: "Disease Detection", ... },
-//   { icon: <FaChartLine />, title: "Market Price Predictor", ... },
-//   { icon: <FaPlayCircle />, title: "FarmerTube", ... },
-//   { icon: <FaBook />, title: "AgriGuide", ... },
-// ];
+
   const services = [
     {
       icon: <FaShoppingCart />,
       title: "Online Marketplace",
       description: "Buy seeds, fertilizers, and equipment directly from verified suppliers.",
       buttonText: "Shop Now",
+      link:"/marketplace",
     },
     {
       icon: <FaCalendarAlt />,
       title: "AI Crop Planner",
       description: "Smart seasonal crop planning based on soil, climate, and market data.",
       buttonText: "Plan Crops",
+      link: "seasonal-crop-planner",
     },
     {
       icon: <FaBug />,
       title: "Disease Detection",
       description: "AI-powered tool for identifying plant diseases from photos.",
       buttonText: "Scan Plants",
+      link:"/disease-detection",
     },
     {
       icon: <FaChartLine />,
       title: "Market Price Predictor",
       description: "Real-time price predictions and future price trends.",
       buttonText: "Check Prices",
+      link:"/market-price-predictor",
     },
     {
       icon: <FaPlayCircle />,
       title: "FarmerTube",
       description: "Farming tutorials & knowledge hub with expert videos.",
       buttonText: "Watch Videos",
+      link:"/farmer-tube",
     },
     {
       icon: <FaBook />,
       title: "AgriGuide",
       description: "Smart solutions, expert advice, and success stories for modern farmers.",
       buttonText: "Read Blogs",
+      link:"/blogs",
     },
   ];
-//   const services = [
-//     {
-//       icon: "📦",
-//       title: "Online Marketplace",
-//       description: "Buy seeds, fertilizers, and equipment directly from verified suppliers.",
-//       buttonText: "Shop Now",
-//     },
-//     {
-//       icon: "📅",
-//       title: "AI Crop Planner",
-//       description: "Smart seasonal crop planning based on soil, climate, and market data.",
-//       buttonText: "Plan Crops",
-//     },
-//     {
-//       icon: "🐞",
-//       title: "Disease Detection",
-//       description: "AI-powered tool for identifying plant diseases from photos.",
-//       buttonText: "Scan Plants",
-//     },
-//     {
-//       icon: "📈",
-//       title: "Market Price Predictor",
-//       description: "Real-time price predictions and future price trends.",
-//       buttonText: "Check Prices",
-//     },
-//     {
-//       icon: "▶️",
-//       title: "FarmerTube",
-//       description: "Farming tutorials & knowledge hub with expert videos.",
-//       buttonText: "Watch Videos",
-//     },
-//     {
-//       icon: "📝",
-//       title: "AgriGuide",
-//       description: "Smart solutions, expert advice, and success stories for modern farmers.",
-//       buttonText: "Read Blogs",
-//     },
-//   ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-      <Head>
-        <title>Agri Services</title>
-        <meta name="description" content="Empowering farmers with smart solutions" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
       {/* Heading and Subheading */}
       <div className="text-center mb-10">
@@ -115,9 +71,9 @@ export default function Home() {
               {service.title}
             </h2>
             <p className="text-gray-600 mb-4">{service.description}</p>
-            <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition-colors cursor-pointer">
-              {service.buttonText}
-            </button>
+         <Link href={`${service.link}`}>   <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition-colors cursor-pointer">
+              {service.buttonText} 
+            </button></Link>
           </div>
         ))}
       </div>

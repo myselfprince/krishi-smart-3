@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Homepage() {
   return (
@@ -19,12 +20,12 @@ export default function Homepage() {
               Simplifying Agriculture for Every Kisan
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors duration-200">
+           <Link href="/marketplace" >  <button className="cursor-pointer px-6 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-colors duration-200">
                 Marketplace
-              </button>
-              <button className="px-6 py-3 bg-yellow-500 text-white font-semibold rounded-full hover:bg-yellow-600 transition-colors duration-200">
+              </button></Link> 
+              <Link href="/farmertube">    <button className="cursor-pointer px-6 py-3 bg-yellow-500 text-white font-semibold rounded-full hover:bg-yellow-600 transition-colors duration-200">
                 FarmerTube
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>
@@ -36,7 +37,7 @@ export default function Homepage() {
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-200">
             <p className="mt-2 text-gray-800 font-bold text-xl w-1/2 text-center mx-auto  ">
-              We’re using a new technology
+              We are using a new technology
             </p>
             <div className="mt-4">
               <Image
