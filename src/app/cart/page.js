@@ -1,11 +1,15 @@
-
+// app/cart/page.js (or pages/cart.js)
 'use client';
 
 import Head from 'next/head';
 import { useCart } from '@/components/CartContext';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter for redirection
+import toast from 'react-hot-toast';
 
 export default function Cart() {
-  const { cart, setCart } = useCart(); // Add setCart to update the cart state
+  const { cart, setCart } = useCart();
+  const router = useRouter(); // Initialize useRouter for navigation
 
   // Calculate subtotal for each item (price * quantity)
   const calculateSubtotal = (item) => {
@@ -20,6 +24,7 @@ export default function Cart() {
   // Function to remove an item from the cart
   const removeItem = (itemId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+    toast.success('Item removed from cart!');
   };
 
   // Function to update quantity of an item
@@ -30,6 +35,80 @@ export default function Cart() {
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       )
     );
+  };
+
+  // Load Razorpay script dynamically
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  // Handle checkout with Razorpay
+  const handleCheckout = async () => {
+    if (cart.length === 0) {
+      toast.error('Your cart is empty!');
+      return;
+    }
+
+    const totalAmount = calculateTotal();
+
+    try {
+      // Create order by calling the server endpoint
+      const response = await fetch('/api/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ amount: totalAmount }),
+      });
+
+      const order = await response.json();
+
+      if (!order.id) {
+        throw new Error('Failed to create order');
+      }
+
+      // Open Razorpay Checkout
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: totalAmount * 100, // Amount in paise
+        currency: 'INR',
+        name: 'KrishiSmart',
+        description: 'Purchase of Farming Essentials',
+        order_id: order.id,
+        prefill: {
+          name: 'Customer Name',
+          email: 'customer@example.com',
+          contact: '9999999999',
+        },
+        theme: {
+          color: '#16A34A',
+        },
+        handler: function (response) {
+          // Handle successful payment
+          toast.success('Payment successful! Redirecting...');
+          setCart([]); // Clear the cart
+          localStorage.removeItem('cart'); // Clear local storage
+          router.push('/payment-success'); // Redirect to payment success page
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+
+      rzp.on('payment.failed', function (response) {
+        toast.error('Payment failed. Please try again.');
+        console.error('Payment failed:', response.error);
+      });
+    } catch (error) {
+      toast.error('Error initiating payment. Please try again.');
+      console.error('Checkout error:', error);
+    }
   };
 
   return (
@@ -64,14 +143,14 @@ export default function Cart() {
                   <div className="flex items-center mt-2">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-l-md hover:bg-gray-300 cursor-pointer"
+                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-l-md hover:bg-gray-300"
                     >
                       -
                     </button>
                     <span className="px-4">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-r-md hover:bg-gray-300 cursor-pointer"
+                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-r-md hover:bg-gray-300"
                     >
                       +
                     </button>
@@ -80,7 +159,7 @@ export default function Cart() {
                 </div>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="ml-4 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 cursor-pointer"
+                  className="ml-4 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
                 >
                   Remove
                 </button>
@@ -89,8 +168,8 @@ export default function Cart() {
             <div className="text-right mt-6">
               <p className="text-xl font-bold">Total: ₹{calculateTotal()}</p>
               <button
-                onClick={() => alert('Checkout functionality to be implemented')}
-                className="mt-4 bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 cursor-pointer"
+                onClick={handleCheckout}
+                className="mt-4 bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600"
               >
                 Checkout
               </button>
