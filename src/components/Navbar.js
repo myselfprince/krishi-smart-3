@@ -46,7 +46,9 @@ const Navbar = () => {
     checkAuthStatus();
   }, [checkAuthStatus]);
 
-  
+  function closeMenu(){
+    setIsOpen(false);
+  } 
 
   const handleLogout = async () => {
     try {
@@ -102,7 +104,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
+          <div onClick={closeMenu} className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image src="/logo.webp" alt="KrishiSmart Logo" width={40} height={40} className="mr-2" />
               <span className="text-xl font-bold text-green-600">KrishiSmart</span>
@@ -164,11 +166,11 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600">Home</Link>
-              <Link href="/marketplace" className="block px-3 py-2 text-gray-700 hover:text-green-600">Marketplace</Link>
-              <Link href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
-              <Link href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
-             {user && <Link href="/cart" className="block px-3 py-2 text-gray-700 hover:text-green-600 relative">
+              <Link onClick={closeMenu} href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600">Home</Link>
+              <Link onClick={closeMenu} href="/marketplace" className="block px-3 py-2 text-gray-700 hover:text-green-600">Marketplace</Link>
+              <Link onClick={closeMenu} href="/seasonal-crop-planner" className="block px-3 py-2 text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
+              <Link onClick={closeMenu} href="/community" className="block px-3 py-2 text-gray-700 hover:text-green-600">Community</Link>
+             {user && <Link onClick={closeMenu} href="/cart" className="block px-3 py-2 text-gray-700 hover:text-green-600 relative">
                 Cart
                 {cartItemCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -186,7 +188,7 @@ const Navbar = () => {
                   </div>
                   {isDropdownOpen && (
                     <div className="pl-4 mt-1 w-full bg-white rounded-lg shadow-md">
-                      <Link
+                      <Link 
                         href="/profile"
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                         onClick={() => setIsDropdownOpen(false)}
@@ -203,7 +205,7 @@ const Navbar = () => {
                   )}
                 </div>
               ) : (
-                <Link href="/login" className="block px-3 py-2 text-green-600 hover:bg-gray-100">Login</Link>
+                <Link onClick={closeMenu} href="/login" className="block px-3 py-2 text-green-600 hover:bg-gray-100">Login</Link>
               )}
             </div>
           </div>
