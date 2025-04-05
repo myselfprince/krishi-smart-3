@@ -122,7 +122,7 @@ const Navbar = () => {
             <Link href="/marketplace" className="text-gray-700 hover:text-green-600">MarketPlace</Link>
             <Link href="/seasonal-crop-planner" className="text-gray-700 hover:text-green-600">Seasonal Crop Planner</Link>
             <Link href="/community" className="text-gray-700 hover:text-green-600">Community</Link>
-            <Link href="/community" className="text-gray-700 hover:text-green-600">Raise Funds</Link>
+            <Link href="/fund-raise" className="text-gray-700 hover:text-green-600">Raise Funds</Link>
 
             {/* Cart Icon */}
            {user && <Link href="/cart" className="relative text-gray-700 hover:text-green-600">
