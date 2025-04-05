@@ -1,4 +1,4 @@
-// src/app/about/page.js
+
 export default function About() {
     return (
       <div className="container mx-auto p-6">
