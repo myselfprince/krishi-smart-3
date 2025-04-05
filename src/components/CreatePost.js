@@ -52,7 +52,7 @@ export default function CreatePost({ setPosts, isFundraising = false }) {
     <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-6 mb-6 max-w-2xl w-full">
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Create a Post</h2>
       {error && <p className="text-red-600 text-center mb-4">{error}</p>}
-      <div className="space-y-6">
+      <div className="space-y-6 grid ">
         <input
           type="text"
           value={title}

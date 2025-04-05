@@ -1,4 +1,5 @@
 import { FaShoppingCart, FaCalendarAlt, FaBug, FaChartLine, FaPlayCircle, FaBook } from "react-icons/fa";
+import { FaUserGroup } from "react-icons/fa6";
 import Link from "next/link";
 
 export default function Home() {
@@ -19,19 +20,34 @@ export default function Home() {
       link: "seasonal-crop-planner",
     },
     {
-      icon: <FaBug />,
-      title: "Disease Detection",
-      description: "AI-powered tool for identifying plant diseases from photos.",
-      buttonText: "Scan Plants",
-      link:"/disease-detection",
+      icon: <FaChartLine />,
+      title: "Fundraising - Crop Damage",
+      description: "Community people help to raise funds in case of any crop damage.",
+      buttonText: "Raise Funds",
+      link:"/fund-raise",
     },
     {
-      icon: <FaChartLine />,
-      title: "Market Price Predictor",
-      description: "Real-time price predictions and future price trends.",
-      buttonText: "Check Prices",
-      link:"/market-price-predictor",
+      
+      icon: <FaUserGroup />,
+      title: "Community",
+      description: "Connect with farmers, share experiences.",
+      buttonText: "Join Community",
+      link:"/community",
     },
+    // {
+    //   icon: <FaBug />,
+    //   title: "Disease Detection",
+    //   description: "AI-powered tool for identifying plant diseases from photos.",
+    //   buttonText: "Scan Plants",
+    //   link:"/disease-detection",
+    // },
+    // {
+    //   icon: <FaChartLine />,
+    //   title: "Market Price Predictor",
+    //   description: "Real-time price predictions and future price trends.",
+    //   buttonText: "Check Prices",
+    //   link:"/market-price-predictor",
+    // },
     {
       icon: <FaPlayCircle />,
       title: "FarmerTube",
