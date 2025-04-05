@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Homepage() {
   return (
-    <div className="relative">
+    <div className="relative bg-gray-100">
  
       <section
         className="bg-cover bg-center bg-no-repeat py-20 min-h-[500px] sm:min-h-[600px] flex items-center"
@@ -32,7 +32,7 @@ export default function Homepage() {
       </section>
 
       {/* Feature Cards Section */}
-      <section className="relative -mt-16 sm:-mt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative -mt-16 sm:-mt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-200">
